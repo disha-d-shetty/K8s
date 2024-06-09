@@ -10,8 +10,8 @@ COPY package*.json ./
 # Install any needed packages specified in package.json
 RUN npm install
 
-# Bundle app source inside Docker image
-COPY . .
+# tho the dockerfile is instructed to run, the current directory is still in root, not inside node
+COPY ./node .
 
 # Make port 3000 available to the world outside this container
 EXPOSE 3000
