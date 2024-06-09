@@ -12,10 +12,12 @@ jobs:
   node-application:
     runs-on: ubuntu-latest
 
+    #copy of your repository at the GitHub runner
     steps:
       - name: Check Out Repo
         uses: actions/checkout@v2
 
+    #support for building multi-platform images
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v1
 
@@ -25,6 +27,8 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
+    #-f flag causes curl to fail if the HTTP request doesn't return a success status code
+    # docker executes inside the my-node-app container
       - name: Dockerize node
         run: |
           docker build -f ./node/Dockerfile -t my-node-app .
@@ -33,11 +37,7 @@ jobs:
           docker logs my-node-app
           sleep 10
           docker exec my-node-app curl -f http://localhost:3000
-
-      - name: Tag Docker image
-        run: |
           docker tag my-node-app dishadgithub/node-application:0.0.2
-
-      - name: Push image to Docker Hub
-        run: |
           docker push dishadgithub/node-application:0.0.2
+
+
