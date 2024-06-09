@@ -54,7 +54,7 @@ jobs:
         run: |
           curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
           sudo minikube status
-          sudo find ~ -name config
+          sudo find /root -name config
 
       - name: Install NGINX Ingress Controller
         run: |
