@@ -46,6 +46,7 @@ jobs:
           sudo install minikube /usr/local/bin/minikube
           sudo apt-get update && sudo apt-get install conntrack         #required for minikube kub version to start
           sudo minikube start --driver=none --kubernetes-version=v1.20.0
+          sudo cp /root/.kube/config /home/runner/.kube/config
           echo $USER           #runner is the profile used
           sudo minikube status
 
@@ -54,7 +55,7 @@ jobs:
         run: |
           curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
           sudo minikube status
-          sudo find /root -name config
+          
 
       - name: Install NGINX Ingress Controller
         run: |
