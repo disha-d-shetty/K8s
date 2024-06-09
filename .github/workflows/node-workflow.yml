@@ -52,4 +52,4 @@ jobs:
 
       - name: Get Minikube Status
         run: |
-          minikube status
+          sudo minikube status
