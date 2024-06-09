@@ -17,15 +17,15 @@ jobs:
     - name: Check Out Repo
       uses: actions/checkout@v2
 
-    #support for building multi-platform images
-    - name: Set up Docker Buildx
-      uses: docker/setup-buildx-action@v1
-
     - name: Log in to Docker Hub
       uses: docker/login-action@v1
       with:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
+        
+    #support for building multi-platform images
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v1
 
     #-f flag causes curl to fail if the HTTP request doesn't return a success status code
     # docker executes inside the my-node-app container
