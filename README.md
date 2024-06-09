@@ -10,4 +10,5 @@ Deploy a containerized application to Kubernetes using helm
          - docker push dishadgithub/node-application:0.0.1]
     c. deploy the dockerizes application on minikube using helm.
         [- helm create helm-node
-         - using nginx as loadbalancer to expose the application to outer world.]
+         - using nginx as loadbalancer to expose the application to outer world.
+         - the application is listening at port 3000, container where the application is running on the active pod is also listening at port 3000 but the clusterip service is listening ]
