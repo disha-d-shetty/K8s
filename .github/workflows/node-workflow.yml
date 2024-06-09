@@ -32,5 +32,3 @@ jobs:
       run: |
         sleep 10  # wait for the application to start
         curl -f http://localhost:3000
-Explanation of Workflow Steps
-Check Out Repo: This
