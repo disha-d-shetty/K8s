@@ -48,6 +48,7 @@ jobs:
           sudo minikube start --driver=none --kubernetes-version=v1.20.0
           sudo mkdir -p /home/runner/.kube/
           sudo cp /root/.kube/config /home/runner/.kube/config
+          sudo chown runner:runner /home/runner/.kube/config
           echo $USER           #runner is the profile used
           sudo minikube status
 
