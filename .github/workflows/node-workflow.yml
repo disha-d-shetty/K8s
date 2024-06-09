@@ -31,4 +31,4 @@ jobs:
     - name: Test Docker Container
       run: |
         sleep 30  # wait for the application to start
-        curl -f http://localhost:3000
+        docker exec my-node-app curl -f http://localhost:3000
