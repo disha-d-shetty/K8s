@@ -51,6 +51,7 @@ jobs:
           sudo chown runner:runner /home/runner/.kube/config
           sudo cp -r /root/.minikube /home/runner/
           sudo chown -R runner:runner /home/runner/.minikube/
+          sudo sed -i 's|/root/.minikube|/home/runner/.minikube|g' /home/runner/.kube/config
           echo $USER           #runner is the profile used
           sudo minikube status
 
