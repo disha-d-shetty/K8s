@@ -26,12 +26,12 @@ jobs:
 
     - name: Run Docker Container
       run: |
+        docker images
         docker run -d --name my-node-app -p 3000:3000 my-node-app
-        sleep 10  # wait for the application to start
-        docker exec my-node-app curl -f http://localhost:3000
+        docker logs my-node-app
 
-    # -f flag causes curl to fail if the HTTP request doesn't return a success status code
-    # - name: Test Docker Container
-    #   run: |
-    #     sleep 30  # wait for the application to start
-    #     docker exec my-node-app curl -f http://localhost:3000
+    #-f flag causes curl to fail if the HTTP request doesn't return a success status code
+    - name: Test Docker Container
+      run: |
+        sleep 30  # wait for the application to start
+        docker exec my-node-app curl -f http://localhost:3000
