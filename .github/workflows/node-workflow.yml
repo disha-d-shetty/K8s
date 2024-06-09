@@ -40,4 +40,15 @@ jobs:
           docker tag my-node-app dishadgithub/node-application:0.0.2
           docker push dishadgithub/node-application:0.0.2
 
+      - name: Install Minikube
+        run: |
+          curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+          sudo install minikube /usr/local/bin/minikube
 
+      - name: Start Minikube
+        run: |
+          sudo minikube start --driver=none --kubernetes-version=v1.20.0
+
+      - name: Get Minikube Status
+        run: |
+          minikube status
