@@ -8,3 +8,6 @@ Deploy a containerized application to Kubernetes using helm
         [- docker login
          - docker tag my-node-app:latest dishadgithub/node-application:0.0.1
          - docker push dishadgithub/node-application:0.0.1]
+    c. deploy the dockerizes application on minikube using helm.
+        [- helm create helm-node
+         - using nginx as loadbalancer to expose the application to outer world.]
