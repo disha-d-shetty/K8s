@@ -26,7 +26,6 @@ jobs:
       with:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
-
     - name: Dockerize node
       run: |
         docker build -f ./node/Dockerfile -t my-node-app . ##-f flag causes curl to fail if the HTTP request doesn't return a success status code
