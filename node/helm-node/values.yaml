@@ -19,7 +19,6 @@ service:
 #for loadbalancer setup, using nginx as loadbalancer
 ingress:
   enabled: true
-  className: ""
   annotations:
 #  Ingress controller (the component responsible for managing Ingress resources) should be nginx. 
 # This means that nginx will be used to route traffic from outside the cluster to services within the cluster.
