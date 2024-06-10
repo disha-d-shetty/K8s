@@ -34,7 +34,7 @@ metadata:
   name: {{ .Release.Name }}
 spec:
   rules:
-  - host: {{ .Values.ingress.hosts[0].host }}
+  - host: node-app.local
     http:
       paths:
       - pathType: Prefix
