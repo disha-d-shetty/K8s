@@ -26,5 +26,6 @@ spec:
                 port:
                   number: {{ $svcPort }}
           {{- end }}
+        {{- end }}  # Add this line to close the 'paths' block
     {{- end }}
 {{- end }}
