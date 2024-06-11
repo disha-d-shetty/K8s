@@ -16,7 +16,7 @@ spec:
     {{- range .Values.ingress.hosts }}
     - host: {{ .host | quote }}
       http:
-        paths:
+      paths:
           {{- range .paths }}
           - path: {{ .path | nindent 12 }}
             pathType: {{ .pathType | nindent 14 }}
