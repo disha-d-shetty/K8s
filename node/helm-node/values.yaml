@@ -27,5 +27,5 @@ ingress:
   hosts:
     - host: node-app.local
       paths:
-        - path: /
+        - path: / 
           pathType: Prefix
