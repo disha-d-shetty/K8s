@@ -16,15 +16,17 @@ spec:
     {{- range .Values.ingress.hosts }}
     - host: {{ .host | quote }}
       http:
-      paths:
+        paths:
+          {{- if .paths }}
           {{- range .paths }}
-          - path: {{ .path | nindent 12 }}
-            pathType: {{ .pathType | nindent 14 }}
+          - path: {{ .path }}
+            pathType: {{ .pathType }}
             backend:
               service:
-                name: {{ $fullName | nindent 16 }}
+                name: {{ $fullName }}
                 port:
-                  number: {{ $svcPort | nindent 18 }}
+                  number: {{ $svcPort }}
+          {{- end }}
           {{- end }}
     {{- end }}
 {{- end }}
