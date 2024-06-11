@@ -15,11 +15,10 @@ spec:
   rules:
     {{- range .Values.ingress.hosts }}
     - host: {{ .host | quote }}
-      http:
         paths:
           {{- range .paths }}
-          - path: /
-            pathType: Prefix
+          - path: {{ .path }}
+            pathType: {{ .pathType }}
             backend:
               service:
                 name: {{ $fullName }}
