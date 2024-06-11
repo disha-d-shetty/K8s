@@ -17,11 +17,12 @@ service:
   targetPort: 3000
 
 #for loadbalancer setup, using nginx as loadbalancer
+
+#  Ingress controller (the component responsible for managing Ingress resources) should be nginx. 
+# This means that nginx will be used to route traffic from outside the cluster to services within the cluster.
 ingress:
   enabled: true
   annotations:
-#  Ingress controller (the component responsible for managing Ingress resources) should be nginx. 
-# This means that nginx will be used to route traffic from outside the cluster to services within the cluster.
     kubernetes.io/ingress.class: nginx
   hosts:
     - host: node-app.local
