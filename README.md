@@ -17,9 +17,15 @@ Deploy a containerized application to Kubernetes using helm
          - the application is listening at port 3000, container where the application is running on the active pod is also listening at targetport 3000 but the clusterip service is listening on the port 80(*listening - server waiting for incoming connections on a specific network port*)]
 
 Note: minikube doesnt create any load balancer. So this wasnt successful.
-
-
 On AWS:
 ![My Image](./Untitled.png)
+ingress on AWS - https://awswithatiq.com/how-to-create-an-nginx-ingress-controller-with-aws-classic-load-balancer/
+
+volumes addition:
+Persistent volumes and Persistent volume claim(1:1 relation)
+- local volumes can be hosted on node level.[PV to be created on the node level and PVC on pod level]
+- EBS/EFS volumes (external) can be added to the cluster level.
+  [use storage class on cluster level and PVC under pod level. PV gets created with new PVCs]
+
 
 
