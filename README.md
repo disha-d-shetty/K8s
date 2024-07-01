@@ -25,7 +25,9 @@ volumes addition:
 Persistent volumes and Persistent volume claim(1:1 relation)
 - local volumes can be hosted on node level.[PV to be created on the node level and PVC on pod level]
 - EBS/EFS volumes (external) can be added to the cluster level.
-  [use storage class on cluster level and PVC under pod level. PV gets created with new PVCs]
+[   # use storage class on cluster level and PVC under pod level. 
+    # PV gets created with new PVCs
+    # Install drivers for provisioners and IAM roles for them needs to be provided  ]
 
 
 
