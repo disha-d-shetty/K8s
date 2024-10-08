@@ -37,8 +37,8 @@ jobs:
           docker logs my-node-app
           sleep 10
           docker exec my-node-app curl -f http://localhost:3000
-          docker tag my-node-app dishadgithub/node-application:0.0.2
-          docker push dishadgithub/node-application:0.0.2
+          docker tag my-node-app dishadgithub/node-application:0.0.3
+          docker push dishadgithub/node-application:0.0.3
 
       - name: Install Minikube
         run: |
